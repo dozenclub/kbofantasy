@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Google material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>12인회 KBO 판타지 리그</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #0174DF;">
+
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="../"> <i class="material-icons">leaderboard</i> 순위표
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="../match/"> <i class="material-icons">event</i> 경기
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link font-weight-bold" href="#"> <i class="material-icons">face</i> 로스터
+                            <span class="sr-only">(current)</span> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="../trade/"> <i class="material-icons">cached</i> 영입
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-md">
+                    <br>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-2">
+                    <button type="button" id="team1" onclick="displayRoster(1)" class="btn btn-primary btn-block">깡</button>
+                </div>
+                <div class="form-group col-2">
+                    <button type="button" id="team2" onclick="displayRoster(2)" class="btn btn-outline-primary btn-block">달</button>
+                </div>
+                <div class="form-group col-2">
+                    <button type="button" id="team3" onclick="displayRoster(3)" class="btn btn-outline-primary btn-block">놉</button>
+                </div>
+                <div class="form-group col-2">
+                    <button type="button" id="team4" onclick="displayRoster(4)" class="btn btn-outline-primary btn-block">비</button>
+                </div>
+                <div class="form-group col-2">
+                    <button type="button" id="team5" onclick="displayRoster(5)" class="btn btn-outline-primary btn-block">쌤</button>
+                </div>
+                <div class="form-group col-2">
+                    <button type="button" id="team6" onclick="displayRoster(6)" class="btn btn-outline-primary btn-block">요</button>
+                </div>
+              </div>
+
+            <table id="rosterHitterDefault" class="table table-hover text-center table-responsive-md">
+                <thead>
+                    <tr>
+                        <th style="width:  5%"></th>
+                        <th style="width: 15%">선수명</th>
+                        <th>포인트</th>
+                        <th>금주</th>
+                        <th>금월</th>
+                        <th>출장률</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">C</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>25</td>
+                        <td><span style="color:red;">&#9650; 21</span></td>
+                        <td><span style="color:red;">&#9650; 37</span></td>
+                        <td>95%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1B</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>-1</td>
+                        <td><span style="color:blue;">&#9660; 6</span></td>
+                        <td><span style="color:red;">&#9650; 2</span></td>
+                        <td>95%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2B</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>25</td>
+                        <td><span style="color:red;">&#9650; 21</span></td>
+                        <td><span style="color:red;">&#9650; 37</span></td>
+                        <td>95%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3B</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>25</td>
+                        <td><span style="color:red;">&#9650; 21</span></td>
+                        <td><span style="color:red;">&#9650; 37</span></td>
+                        <td>95%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">SS</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>25</td>
+                        <td><span style="color:red;">&#9650; 21</span></td>
+                        <td><span style="color:red;">&#9650; 37</span></td>
+                        <td>95%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">LF</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>25</td>
+                        <td><span style="color:red;">&#9650; 21</span></td>
+                        <td><span style="color:red;">&#9650; 37</span></td>
+                        <td>95%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">CF</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>25</td>
+                        <td><span style="color:red;">&#9650; 21</span></td>
+                        <td><span style="color:red;">&#9650; 37</span></td>
+                        <td>95%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">RF</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>25</td>
+                        <td><span style="color:red;">&#9650; 21</span></td>
+                        <td><span style="color:red;">&#9650; 37</span></td>
+                        <td>95%</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">DH</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>25</td>
+                        <td><span style="color:red;">&#9650; 21</span></td>
+                        <td><span style="color:red;">&#9650; 37</span></td>
+                        <td>95%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table id="rosterHitterAdvanced" class="table table-hover text-center table-responsive-md" hidden>
+                <thead>
+                    <tr>
+                        <th style="width:  5%"></th>
+                        <th style="width: 15%">선수명</th>
+                        <th>H/AB</th>
+                        <th>R</th>
+                        <th>2B</th>
+                        <th>HR</th>
+                        <th>RBI</th>
+                        <th>SB</th>
+                        <th>BB</th>
+                        <th>K</th>
+                        <th>Avg</th>
+                        <th>OBP</th>
+                        <th>SLG</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">C</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0.300</td>
+                        <td>0.468</td>
+                        <td>0.927</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1B</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0.300</td>
+                        <td>0.468</td>
+                        <td>0.927</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2B</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0.300</td>
+                        <td>0.468</td>
+                        <td>0.927</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3B</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0.300</td>
+                        <td>0.468</td>
+                        <td>0.927</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">SS</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0.300</td>
+                        <td>0.468</td>
+                        <td>0.927</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">LF</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0.300</td>
+                        <td>0.468</td>
+                        <td>0.927</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">CF</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0.300</td>
+                        <td>0.468</td>
+                        <td>0.927</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">RF</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0.300</td>
+                        <td>0.468</td>
+                        <td>0.927</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">DH</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0.300</td>
+                        <td>0.468</td>
+                        <td>0.927</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table id="rosterPitcherDefault" class="table table-hover text-center table-responsive-md">
+                <thead>
+                    <tr>
+                        <th style="width:  5%"></th>
+                        <th style="width: 15%">선수명</th>
+                        <th>포인트</th>
+                        <th>금주</th>
+                        <th>금월</th>
+                        <th>출장률</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">P</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>25</td>
+                        <td><span style="color:red;">&#9650; 21</span></td>
+                        <td><span style="color:red;">&#9650; 37</span></td>
+                        <td>95%</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th scope="row">P</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>25</td>
+                        <td><span style="color:red;">&#9650; 21</span></td>
+                        <td><span style="color:red;">&#9650; 37</span></td>
+                        <td>95%</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th scope="row">P</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>25</td>
+                        <td><span style="color:red;">&#9650; 21</span></td>
+                        <td><span style="color:red;">&#9650; 37</span></td>
+                        <td>95%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table id="rosterPitcherAdvanced" class="table table-hover text-center table-responsive-md" hidden>
+                <thead>
+                    <tr>
+                        <th style="width:  5%"></th>
+                        <th style="width: 15%">선수명</th>
+                        <th>IP</th>
+                        <th>W</th>
+                        <th>CG</th>
+                        <th>SV</th>
+                        <th>BB</th>
+                        <th>K</th>
+                        <th>ERA</th>
+                        <th>WHIP</th>
+                        <th>QS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">P</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1.21</td>
+                        <td>0.59</td>
+                        <td>6</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th scope="row">P</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1.21</td>
+                        <td>0.59</td>
+                        <td>6</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th scope="row">P</th>
+                        <td>ㅇㅇㅇ</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1.21</td>
+                        <td>0.59</td>
+                        <td>6</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="row justify-content-center">
+                <div class="col-md">
+                    <br>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom Javascript -->
+    <script src="rosterScript.js"></script>
+
+</body>
+
+</html>
