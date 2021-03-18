@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/table-kbofantasy.css">
+
     <!-- Google material icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -33,7 +36,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item active">
-                        <a class="nav-link font-weight-bold" href="#"> <i class="material-icons">leaderboard</i> 순위표
+                        <a class="nav-link font-weight-bold" href="#"> <i class="material-icons">leaderboard</i> 순위
                             <span class="sr-only">(current)</span> </a>
                     </li>
                     <li class="nav-item">
@@ -61,135 +64,74 @@
                 </div>
             </div>
 
-            <table id="leaderboardDefault" class="table table-hover text-center table-responsive-md">
+            <table id="leaderboardDefault" class="table table-hover text-center">
                 <thead>
                     <tr>
-                        <th scope="col" style="width:  5%">#</th>
-                        <th scope="col" style="width: 35%">팀</th>
+                        <th scope="col">#</th>
+                        <th scope="col">팀</th>
+                        <th scope="col">승점</th>
                         <th scope="col">승</th>
                         <th scope="col">패</th>
                         <th scope="col">무</th>
-                        <th scope="col">승률</th>
-                        <th scope="col">승차</th>
+                        <th scope="col">보너스</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="table-success">
+                    <tr id="leaderboardDefaultLine1" class="table-success">
+                        <!-- 리더보드 라인 예시
                         <th scope="row">1</th>
                         <td>깡</td>
+                        <td>30</td>
                         <td>5</td>
                         <td>0</td>
                         <td>0</td>
-                        <td>1.000</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>달</td>
-                        <td>4</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td>0.800</td>
-                        <td>1.0</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>놉</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td>0</td>
-                        <td>0.600</td>
-                        <td>2.0</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>비</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>0</td>
-                        <td>0.400</td>
-                        <td>3.0</td>
-                    </tr>
-                    <tr class="table-danger">
-                        <th scope="row">5</th>
-                        <td>쌤</td>
-                        <td>1</td>
-                        <td>4</td>
-                        <td>0</td>
-                        <td>0.200</td>
-                        <td>4.0</td>
-                    </tr>
-                    <tr class="table-danger">
-                        <th scope="row">6</th>
-                        <td>요</td>
-                        <td>0</td>
                         <td>5</td>
-                        <td>0</td>
-                        <td>0.000</td>
-                        <td>5.0</td>
+                        -->
+                    </tr>
+                    <tr id="leaderboardDefaultLine2">
+                    </tr>
+                    <tr id="leaderboardDefaultLine3">
+                    </tr>
+                    <tr id="leaderboardDefaultLine4">
+                    </tr>
+                    <tr id="leaderboardDefaultLine5" class="table-danger">
+                    </tr>
+                    <tr id="leaderboardDefaultLine6" class="table-danger">
                     </tr>
                 </tbody>
             </table>
 
-            <table id="leaderboardAdvanced" class="table table-hover text-center table-responsive-md" hidden>
+            <table id="leaderboardAdvanced" class="table table-hover text-center" hidden>
                 <thead>
                     <tr>
-                        <th scope="col" style="width:  5%">#</th>
-                        <th scope="col" style="width: 35%">팀</th>
-                        <th scope="col">연속</th>
+                        <th scope="col">#</th>
+                        <th scope="col">팀</th>
                         <th scope="col">포인트</th>
                         <th scope="col">금주</th>
-                        <th scope="col">웨이버</th>
+                        <th scope="col">주간1위</th>
+                        <th scope="col">누적1위</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="table-success">
+                    <tr id="leaderboardAdvancedLine1" class="table-success">
+                        <!-- 리더보드 라인 예시
                         <th scope="row">1</th>
                         <td>깡</td>
-                        <td>5승</td>
-                        <td>1265</td>
-                        <td><span style="color:red;">&#9650; 136</span></td>
-                        <td>6위</td>
+                        <td>2000</td>
+                        <td><span style="color:red;">&#9650; 200</span></td>
+                        <td>3회</td>
+                        <td>2회</td>
+                        -->
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>달</td>
-                        <td>1패</td>
-                        <td>1130</td>
-                        <td><span style="color:blue;">&#9660; 12</span></td>
-                        <td>5위</td>
+                    <tr id="leaderboardAdvancedLine2">
                     </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>놉</td>
-                        <td>2승</td>
-                        <td>1020</td>
-                        <td><span style="color:black;">&#9651; 0</span></td>
-                        <td>4위</td>
+                    <tr id="leaderboardAdvancedLine3">
                     </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>비</td>
-                        <td>1승</td>
-                        <td>1040</td>
-                        <td><span style="color:red;">&#9650; 369</span></td>
-                        <td>3위</td>
+                    <tr id="leaderboardAdvancedLine4">
                     </tr>
-                    <tr class="table-danger">
-                        <th scope="row">5</th>
-                        <td>쌤</td>
-                        <td>2패</td>
-                        <td>942</td>
-                        <td><span style="color:blue;">&#9660; 212</span></td>
-                        <td>2위</td>
+                    <tr id="leaderboardAdvancedLine5" class="table-danger">
                     </tr>
-                    <tr class="table-danger">
-                        <th scope="row">6</th>
-                        <td>요</td>
-                        <td>5패</td>
-                        <td>889</td>
-                        <td><span style="color:red;">&#9650; 62</span></td>
-                        <td>1위</td>
+                    <tr id="leaderboardAdvancedLine6" class="table-danger">
                     </tr>
                 </tbody>
             </table>

@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/table-kbofantasy.css">
+
     <!-- Google material icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -33,7 +36,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link font-weight-bold" href="../"> <i class="material-icons">leaderboard</i> 순위표
+                        <a class="nav-link font-weight-bold" href="../"> <i class="material-icons">leaderboard</i> 순위
                         </a>
                     </li>
                     <li class="nav-item">
@@ -63,29 +66,29 @@
 
             <div class="form-row">
                 <div class="form-group col-2">
-                    <button type="button" id="team1" onclick="displayRoster(1)" class="btn btn-primary btn-block">깡</button>
+                    <button type="button" id="team1" onclick="updateRoster(1)" class="btn btn-primary btn-block">깡</button>
                 </div>
                 <div class="form-group col-2">
-                    <button type="button" id="team2" onclick="displayRoster(2)" class="btn btn-outline-primary btn-block">달</button>
+                    <button type="button" id="team2" onclick="updateRoster(2)" class="btn btn-outline-primary btn-block">달</button>
                 </div>
                 <div class="form-group col-2">
-                    <button type="button" id="team3" onclick="displayRoster(3)" class="btn btn-outline-primary btn-block">놉</button>
+                    <button type="button" id="team3" onclick="updateRoster(3)" class="btn btn-outline-primary btn-block">놉</button>
                 </div>
                 <div class="form-group col-2">
-                    <button type="button" id="team4" onclick="displayRoster(4)" class="btn btn-outline-primary btn-block">비</button>
+                    <button type="button" id="team4" onclick="updateRoster(4)" class="btn btn-outline-primary btn-block">비</button>
                 </div>
                 <div class="form-group col-2">
-                    <button type="button" id="team5" onclick="displayRoster(5)" class="btn btn-outline-primary btn-block">쌤</button>
+                    <button type="button" id="team5" onclick="updateRoster(5)" class="btn btn-outline-primary btn-block">쌤</button>
                 </div>
                 <div class="form-group col-2">
-                    <button type="button" id="team6" onclick="displayRoster(6)" class="btn btn-outline-primary btn-block">요</button>
+                    <button type="button" id="team6" onclick="updateRoster(6)" class="btn btn-outline-primary btn-block">요</button>
                 </div>
-              </div>
+            </div>
 
-            <table id="rosterHitterDefault" class="table table-hover text-center table-responsive-md">
+            <table id="rosterHitterDefault" class="table table-hover text-center table-responsive-md table-roster">
                 <thead>
                     <tr>
-                        <th style="width:  5%"></th>
+                        <th style="width:  5%">&#8194;</th>
                         <th style="width: 15%">선수명</th>
                         <th>포인트</th>
                         <th>금주</th>
@@ -93,7 +96,8 @@
                         <th>출장률</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="rosterHitterDefaultBody">
+                    <!-- 로스터 라인 예시
                     <tr>
                         <th scope="row">C</th>
                         <td>ㅇㅇㅇ</td>
@@ -102,77 +106,14 @@
                         <td><span style="color:red;">&#9650; 37</span></td>
                         <td>95%</td>
                     </tr>
-                    <tr>
-                        <th scope="row">1B</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>-1</td>
-                        <td><span style="color:blue;">&#9660; 6</span></td>
-                        <td><span style="color:red;">&#9650; 2</span></td>
-                        <td>95%</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2B</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>25</td>
-                        <td><span style="color:red;">&#9650; 21</span></td>
-                        <td><span style="color:red;">&#9650; 37</span></td>
-                        <td>95%</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3B</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>25</td>
-                        <td><span style="color:red;">&#9650; 21</span></td>
-                        <td><span style="color:red;">&#9650; 37</span></td>
-                        <td>95%</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">SS</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>25</td>
-                        <td><span style="color:red;">&#9650; 21</span></td>
-                        <td><span style="color:red;">&#9650; 37</span></td>
-                        <td>95%</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">LF</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>25</td>
-                        <td><span style="color:red;">&#9650; 21</span></td>
-                        <td><span style="color:red;">&#9650; 37</span></td>
-                        <td>95%</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">CF</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>25</td>
-                        <td><span style="color:red;">&#9650; 21</span></td>
-                        <td><span style="color:red;">&#9650; 37</span></td>
-                        <td>95%</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">RF</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>25</td>
-                        <td><span style="color:red;">&#9650; 21</span></td>
-                        <td><span style="color:red;">&#9650; 37</span></td>
-                        <td>95%</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">DH</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>25</td>
-                        <td><span style="color:red;">&#9650; 21</span></td>
-                        <td><span style="color:red;">&#9650; 37</span></td>
-                        <td>95%</td>
-                    </tr>
+                    -->
                 </tbody>
             </table>
 
-            <table id="rosterHitterAdvanced" class="table table-hover text-center table-responsive-md" hidden>
+            <table id="rosterHitterAdvanced" class="table table-hover text-center table-responsive-md table-roster" hidden>
                 <thead>
                     <tr>
-                        <th style="width:  5%"></th>
+                        <th style="width:  5%">&#8194;</th>
                         <th style="width: 15%">선수명</th>
                         <th>H/AB</th>
                         <th>R</th>
@@ -187,7 +128,8 @@
                         <th>SLG</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="rosterHitterAdvancedBody">
+                    <!-- 로스터 라인 예시
                     <tr>
                         <th scope="row">C</th>
                         <td>ㅇㅇㅇ</td>
@@ -203,133 +145,14 @@
                         <td>0.468</td>
                         <td>0.927</td>
                     </tr>
-                    <tr>
-                        <th scope="row">1B</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>0.300</td>
-                        <td>0.468</td>
-                        <td>0.927</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2B</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>0.300</td>
-                        <td>0.468</td>
-                        <td>0.927</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3B</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>0.300</td>
-                        <td>0.468</td>
-                        <td>0.927</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">SS</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>0.300</td>
-                        <td>0.468</td>
-                        <td>0.927</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">LF</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>0.300</td>
-                        <td>0.468</td>
-                        <td>0.927</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">CF</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>0.300</td>
-                        <td>0.468</td>
-                        <td>0.927</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">RF</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>0.300</td>
-                        <td>0.468</td>
-                        <td>0.927</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">DH</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>0.300</td>
-                        <td>0.468</td>
-                        <td>0.927</td>
-                    </tr>
+                    -->
                 </tbody>
             </table>
 
-            <table id="rosterPitcherDefault" class="table table-hover text-center table-responsive-md">
+            <table id="rosterPitcherDefault" class="table table-hover text-center table-responsive-md table-roster">
                 <thead>
                     <tr>
-                        <th style="width:  5%"></th>
+                        <th style="width:  5%">&#8194;</th>
                         <th style="width: 15%">선수명</th>
                         <th>포인트</th>
                         <th>금주</th>
@@ -337,7 +160,8 @@
                         <th>출장률</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="rosterPitcherDefaultBody">
+                    <!-- 로스터 라인 예시
                     <tr>
                         <th scope="row">P</th>
                         <td>ㅇㅇㅇ</td>
@@ -346,33 +170,14 @@
                         <td><span style="color:red;">&#9650; 37</span></td>
                         <td>95%</td>
                     </tr>
-                </tbody>
-                <tbody>
-                    <tr>
-                        <th scope="row">P</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>25</td>
-                        <td><span style="color:red;">&#9650; 21</span></td>
-                        <td><span style="color:red;">&#9650; 37</span></td>
-                        <td>95%</td>
-                    </tr>
-                </tbody>
-                <tbody>
-                    <tr>
-                        <th scope="row">P</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>25</td>
-                        <td><span style="color:red;">&#9650; 21</span></td>
-                        <td><span style="color:red;">&#9650; 37</span></td>
-                        <td>95%</td>
-                    </tr>
+                    -->
                 </tbody>
             </table>
 
-            <table id="rosterPitcherAdvanced" class="table table-hover text-center table-responsive-md" hidden>
+            <table id="rosterPitcherAdvanced" class="table table-hover text-center table-responsive-md table-roster" hidden>
                 <thead>
                     <tr>
-                        <th style="width:  5%"></th>
+                        <th style="width:  5%">&#8194;</th>
                         <th style="width: 15%">선수명</th>
                         <th>IP</th>
                         <th>W</th>
@@ -385,7 +190,8 @@
                         <th>QS</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="rosterPitcherAdvancedBody">
+                    <!-- 로스터 라인 예시
                     <tr>
                         <th scope="row">P</th>
                         <td>ㅇㅇㅇ</td>
@@ -399,36 +205,7 @@
                         <td>0.59</td>
                         <td>6</td>
                     </tr>
-                </tbody>
-                <tbody>
-                    <tr>
-                        <th scope="row">P</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1.21</td>
-                        <td>0.59</td>
-                        <td>6</td>
-                    </tr>
-                </tbody>
-                <tbody>
-                    <tr>
-                        <th scope="row">P</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1.21</td>
-                        <td>0.59</td>
-                        <td>6</td>
-                    </tr>
+                    -->
                 </tbody>
             </table>
 

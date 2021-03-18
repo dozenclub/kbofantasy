@@ -1,0 +1,33 @@
+.table-match > thead:first-child > tr:first-child > th:first-child {
+    position: sticky;
+    left: 0em;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.table-match > tbody > tr > th:first-child {
+    position: sticky;
+    left: 0em;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.table-roster > thead:first-child > tr:first-child > th:first-child {
+    position: sticky;
+    left: 0em;
+    background-color: white;
+}
+
+.table-roster > tbody > tr > th:first-child {
+    position: sticky;
+    left: 0em;
+    background-color: white;
+}
+
+.table-roster > thead:first-child > tr:first-child > th:nth-child(2) {
+    white-space: nowrap;
+}
+
+.table-roster > tbody > tr > td:nth-child(2) {
+    white-space: nowrap;
+}
