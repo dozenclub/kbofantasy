@@ -27,7 +27,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #0174DF;">
 
-            <a class="navbar-brand" href="#"></a>
+            <a class="navbar-brand" href="#">팀관리</a> <!-- 팀 관리 페이지 링크 삽입 -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -49,6 +49,10 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link font-weight-bold" href="../trade/"> <i class="material-icons">cached</i> 영입
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="../rules/"> <i class="material-icons">article</i> 룰북
                         </a>
                     </li>
                 </ul>
@@ -85,7 +89,16 @@
                 </div>
             </div>
 
-            <table id="rosterHitterDefault" class="table table-hover text-center table-responsive-md table-roster">
+            <div class="form-row">
+                <div class="form-group col">
+                    <button type="button" id="position1" onclick="updatePosition(1)" class="btn btn-outline-primary btn-block">타자</button>
+                </div>
+                <div class="form-group col">
+                    <button type="button" id="position2" onclick="updatePosition(2)" class="btn btn-outline-primary btn-block">투수</button>
+                </div>
+            </div>
+
+            <table id="rosterHitterDefault" class="table table-hover text-center table-responsive-md table-roster" hidden>
                 <thead>
                     <tr>
                         <th style="width:  5%">&#8194;</th>
@@ -115,17 +128,19 @@
                     <tr>
                         <th style="width:  5%">&#8194;</th>
                         <th style="width: 15%">선수명</th>
-                        <th>H/AB</th>
-                        <th>R</th>
-                        <th>2B</th>
-                        <th>HR</th>
-                        <th>RBI</th>
-                        <th>SB</th>
-                        <th>BB</th>
-                        <th>K</th>
-                        <th>Avg</th>
-                        <th>OBP</th>
-                        <th>SLG</th>
+                        <th>AVG</th>
+                        <th>경기</th>
+                        <th>타석</th> <!-- PA -->
+                        <th>타수</th> <!-- AB -->
+                        <th>안타</th> <!-- H -->
+                        <th>2타+</th> <!-- 2B + 3B -->
+                        <th>홈런</th> <!-- HR -->
+                        <th>득점</th> <!-- R -->
+                        <th>타점</th> <!-- RBI -->
+                        <th>도루</th> <!-- SB -->
+                        <th>4구</th> <!-- BB -->
+                        <th>삼진</th> <!-- SO -->
+                        <th>병살</th> <!-- GDP -->
                     </tr>
                 </thead>
                 <tbody id="rosterHitterAdvancedBody">
@@ -133,23 +148,25 @@
                     <tr>
                         <th scope="row">C</th>
                         <td>ㅇㅇㅇ</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
                         <td>0.300</td>
-                        <td>0.468</td>
-                        <td>0.927</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
                     </tr>
                     -->
                 </tbody>
             </table>
 
-            <table id="rosterPitcherDefault" class="table table-hover text-center table-responsive-md table-roster">
+            <table id="rosterPitcherDefault" class="table table-hover text-center table-responsive-md table-roster" hidden>
                 <thead>
                     <tr>
                         <th style="width:  5%">&#8194;</th>
@@ -179,15 +196,20 @@
                     <tr>
                         <th style="width:  5%">&#8194;</th>
                         <th style="width: 15%">선수명</th>
-                        <th>IP</th>
-                        <th>W</th>
-                        <th>CG</th>
-                        <th>SV</th>
-                        <th>BB</th>
-                        <th>K</th>
                         <th>ERA</th>
                         <th>WHIP</th>
-                        <th>QS</th>
+                        <th>경기</th>
+                        <th>이닝</th> <!-- IP -->
+                        <th>승</th>
+                        <th>패</th>
+                        <th>홀드</th>
+                        <th>SV</th> <!-- 세이브 -->
+                        <th>QS</th> <!-- IP >= 6 & ER <= 3 -->
+                        <th>K/BB</th>
+                        <th>안타</th> <!-- H -->
+                        <th>홈런</th> <!-- HR -->
+                        <th>4구</th> <!-- BB -->
+                        <th>삼진</th> <!-- SO -->
                     </tr>
                 </thead>
                 <tbody id="rosterPitcherAdvancedBody">
@@ -195,15 +217,20 @@
                     <tr>
                         <th scope="row">P</th>
                         <td>ㅇㅇㅇ</td>
+                        <td>1.23</td>
+                        <td>4.56</td>
                         <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1.21</td>
-                        <td>0.59</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
                         <td>6</td>
+                        <td>7</td>
+                        <td>7.89</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
                     </tr>
                     -->
                 </tbody>

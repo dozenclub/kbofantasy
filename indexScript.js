@@ -11,13 +11,12 @@ var leaderboardData = [
         // 추가 표시 정보
         teampointstotal: 2000,
         teampointschange: 200,
-        teampointsweeklytop: 3,
-        teampointsseasontop: 2
+        draft: 1
     },
     {
         // 기본 표시 정보
         name: "달",
-        points: 16,
+        points: 14,
         win: 4,
         lose: 1,
         draw: 0,
@@ -25,13 +24,12 @@ var leaderboardData = [
         // 추가 표시 정보
         teampointstotal: 5000,
         teampointschange: -200,
-        teampointsweeklytop: 2,
-        teampointsseasontop: 1
+        draft: 2
     },
     {
         // 기본 표시 정보
         name: "놉",
-        points: 16,
+        points: 14,
         win: 4,
         lose: 1,
         draw: 0,
@@ -39,27 +37,25 @@ var leaderboardData = [
         // 추가 표시 정보
         teampointstotal: 5000,
         teampointschange: -200,
-        teampointsweeklytop: 2,
-        teampointsseasontop: 1
+        draft: 3
     },
     {
         // 기본 표시 정보
         name: "비",
-        points: 16,
+        points: 14,
         win: 4,
         lose: 1,
         draw: 0,
         bonus: 3,
         // 추가 표시 정보
         teampointstotal: 5000,
-        teampointschange: -200,
-        teampointsweeklytop: 2,
-        teampointsseasontop: 1
+        teampointschange: 200,
+        draft: 4
     },
     {
         // 기본 표시 정보
         name: "쌤",
-        points: 16,
+        points: 14,
         win: 4,
         lose: 1,
         draw: 0,
@@ -67,13 +63,12 @@ var leaderboardData = [
         // 추가 표시 정보
         teampointstotal: 5000,
         teampointschange: -200,
-        teampointsweeklytop: 2,
-        teampointsseasontop: 1
+        draft: 5
     },
     {
         // 기본 표시 정보
         name: "요",
-        points: 16,
+        points: 14,
         win: 4,
         lose: 1,
         draw: 0,
@@ -81,13 +76,12 @@ var leaderboardData = [
         // 추가 표시 정보
         teampointstotal: 5000,
         teampointschange: -200,
-        teampointsweeklytop: 2,
-        teampointsseasontop: 1
+        draft: 6
     }
 ]
 
 function createLeaderboardLineDefault(n) {
-    var innerHTMLString = '<th scope="row">' + n + '</th><td>' + leaderboardData[n-1]["name"] + '</td><td>' + leaderboardData[n-1]["points"] + '</td><td>' + leaderboardData[n-1]["win"] + '</td><td>' + leaderboardData[n-1]["lose"] + '</td><td>' + leaderboardData[n-1]["draw"] + '</td><td>' + leaderboardData[n-1]["bonus"];
+    var innerHTMLString = '<th scope="row">' + n + '</th><td>' + leaderboardData[n-1]["name"] + '</td><td>' + leaderboardData[n-1]["points"] + '</td><td>' + leaderboardData[n-1]["win"] + '</td><td>' + leaderboardData[n-1]["lose"] + '</td><td>' + leaderboardData[n-1]["draw"] + '</td><td>' + leaderboardData[n-1]["bonus"] + '회</td>';
     return innerHTMLString;
 }
 
@@ -98,7 +92,7 @@ function createLeaderboardLineAdvanced(n) {
     } else {
         innerHTMLString = innerHTMLString + '<span style="color:blue;">&#9660;' + (-1 * Number(leaderboardData[n-1]["teampointschange"])) + '</span></td><td>';
     }
-    innerHTMLString = innerHTMLString + leaderboardData[n-1]["teampointsweeklytop"] + '회</td><td>' + leaderboardData[n-1]["teampointsseasontop"] + '회</td>';
+    innerHTMLString = innerHTMLString + leaderboardData[n-1]["draft"] + '위</td>';
     return innerHTMLString;
 }
 
