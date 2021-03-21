@@ -31,3 +31,17 @@
 .table-roster > tbody > tr > td:nth-child(2) {
     white-space: nowrap;
 }
+
+.table-trade > thead:first-child > tr:first-child > th:first-child {
+    position: sticky;
+    left: 0em;
+    background-color: white;
+    white-space: nowrap;
+}
+
+.table-trade > tbody > tr > th:first-child {
+    position: sticky;
+    left: 0em;
+    background-color: white;
+    white-space: nowrap;
+}
