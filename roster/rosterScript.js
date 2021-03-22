@@ -223,6 +223,7 @@ function updateRoster(n) {
     var innerHTMLString;
     var innerHTMLStringArray;
     var innerHTMLStringArraySlice;
+    var innerHTMLArray = [];
     rosterHitterTableBody.innerHTML   = '';
     rosterPitcherTableBody.innerHTML   = '';
 
@@ -246,8 +247,10 @@ function updateRoster(n) {
                 innerHTMLStringArraySlice[i] = Number(innerHTMLStringArraySlice[i]).toFixed(hitterBodyDataDecimals[i]);
             }
             // write hitter head and main
-            rosterHitterTableBody.innerHTML = rosterHitterTableBody.innerHTML + '<tr><th scope="row">' + hitterPositionDictionary[key] + '</th><td>' + innerHTMLStringArray[0] + '</td>' + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>';
+            innerHTMLArray.push('<tr><th scope="row">' + hitterPositionDictionary[key] + '</th><td>' + innerHTMLStringArray[0] + '</td>' + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>');
         }
+        // insert table code
+        rosterHitterTableBody.innerHTML = innerHTMLArray.join("");
     }
 
     // update pitcher tables
@@ -270,8 +273,10 @@ function updateRoster(n) {
                 innerHTMLStringArraySlice[i] = Number(innerHTMLStringArraySlice[i]).toFixed(pitcherBodyDataDecimals[i]);
             }
             // write pitcher head and main
-            rosterPitcherTableBody.innerHTML = rosterPitcherTableBody.innerHTML + '<tr><th scope="row">' + pitcherPositionDictionary[key] + '</th><td>' + innerHTMLStringArray[0] + '</td>' + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>';
+            innerHTMLArray.push('<tr><th scope="row">' + pitcherPositionDictionary[key] + '</th><td>' + innerHTMLStringArray[0] + '</td>' + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>');
         }
+        // insert table code
+        rosterPitcherTableBody.innerHTML = innerHTMLArray.join("");
     }
 }
 

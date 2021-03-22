@@ -179,6 +179,7 @@ function writePlayerTable() {
     var innerHTMLString;
     var innerHTMLStringArray;
     var innerHTMLStringArraySlice;
+    var innerHTMLArray = [];
     rosterHitterTableBody.innerHTML   = '';
     rosterPitcherTableBody.innerHTML   = '';
 
@@ -203,9 +204,11 @@ function writePlayerTable() {
                     innerHTMLStringArraySlice[i] = Number(innerHTMLStringArraySlice[i]).toFixed(hitterBodyDataDecimals[i]);
                 }
                 // write hitter head and main
-                rosterHitterTableBody.innerHTML = rosterHitterTableBody.innerHTML + '<tr><th scope="row">' + innerHTMLStringArray[0] + '</th><td>' + innerHTMLStringArray[1] + '</td><td>' + innerHTMLStringArray[2] + '</td>' + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>';
+                innerHTMLArray.push('<tr><th scope="row">' + innerHTMLStringArray[0] + '</th><td>' + innerHTMLStringArray[1] + '</td><td>' + innerHTMLStringArray[2] + '</td>' + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>');
             }
         }
+        // insert table code
+        rosterHitterTableBody.innerHTML = innerHTMLArray.join("");
     }
     if(currentPosition == 2) {
         // update pitcher tables
@@ -228,14 +231,15 @@ function writePlayerTable() {
                     innerHTMLStringArraySlice[i] = Number(innerHTMLStringArraySlice[i]).toFixed(pitcherBodyDataDecimals[i]);
                 }
                 // write pitcher head and main
-                rosterPitcherTableBody.innerHTML = rosterPitcherTableBody.innerHTML + '<tr><th scope="row">' + innerHTMLStringArray[0] + '</th><td>' + innerHTMLStringArray[1] + '</td><td>' + innerHTMLStringArray[2] + '</td>' + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>';
+                innerHTMLArray.push('<tr><th scope="row">' + innerHTMLStringArray[0] + '</th><td>' + innerHTMLStringArray[1] + '</td><td>' + innerHTMLStringArray[2] + '</td>' + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>');
             }
         }
+        // insert table code
+        rosterPitcherTableBody.innerHTML = innerHTMLArray.join("");
     }
 }
 
 window.onload = function() {
-
     // updateTeamSelection('FA');
     // updatePosition(2);
     updateCurrentPlayerList();
