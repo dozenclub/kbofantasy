@@ -98,143 +98,137 @@
                 </div>
             </div>
 
-            <table id="rosterHitterDefault" class="table table-hover text-center table-responsive-md table-roster" hidden>
-                <thead>
-                    <tr>
-                        <th style="width:  5%">&#8194;</th>
-                        <th style="width: 15%">선수명</th>
-                        <th>포인트</th>
-                        <th>금주</th>
-                        <th>금월</th>
-                        <th>출장률</th>
-                    </tr>
-                </thead>
-                <tbody id="rosterHitterDefaultBody">
-                    <!-- 로스터 라인 예시
-                    <tr>
-                        <th scope="row">C</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>25</td>
-                        <td><span style="color:red;">&#9650; 21</span></td>
-                        <td><span style="color:red;">&#9650; 37</span></td>
-                        <td>95%</td>
-                    </tr>
-                    -->
-                </tbody>
-            </table>
+            <div id="rosterHitterFrame" class="row justify-content-center" hidden>
+                <div class="col" style="padding: 0;">
+                    <table id="rosterHitterHead" class="table table-hover text-center table-roster-head">
+                        <thead>
+                            <tr>
+                                <th>&#8194;</th>
+                                <th>선수명</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rosterHitterHeadBody">
+                            <!-- 로스터 라인 예시
+                            <tr>
+                                <th scope="row">C</th>
+                                <td>ㅇㅇㅇ</td>
+                            </tr>
+                            -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col" style="padding: 0;">
+                    <table id="rosterHitterMain" class="table table-hover text-center table-responsive-md table-roster-main">
+                        <thead>
+                            <tr>
+                                <th>포인트</th>
+                                <th>금주</th>
+                                <th>AVG</th>
+                                <th>경기</th>
+                                <th>타석</th> <!-- PA -->
+                                <th>타수</th> <!-- AB -->
+                                <th>안타</th> <!-- H -->
+                                <th>2타+</th> <!-- 2B + 3B -->
+                                <th>홈런</th> <!-- HR -->
+                                <th>득점</th> <!-- R -->
+                                <th>타점</th> <!-- RBI -->
+                                <th>도루</th> <!-- SB -->
+                                <th>4구</th> <!-- BB -->
+                                <th>삼진</th> <!-- SO -->
+                                <th>병살</th> <!-- GDP -->
+                            </tr>
+                        </thead>
+                        <tbody id="rosterHitterMainBody">
+                            <!-- 로스터 라인 예시
+                            <tr>
+                                <td scope="row">250</td>
+                                <td><span style="color:red;">&#9650; 21</span></td>
+                                <td>0.300</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>10</td>
+                                <td>11</td>
+                                <td>12</td>
+                            </tr>
+                            -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-            <table id="rosterHitterAdvanced" class="table table-hover text-center table-responsive-md table-roster" hidden>
-                <thead>
-                    <tr>
-                        <th style="width:  5%">&#8194;</th>
-                        <th style="width: 15%">선수명</th>
-                        <th>AVG</th>
-                        <th>경기</th>
-                        <th>타석</th> <!-- PA -->
-                        <th>타수</th> <!-- AB -->
-                        <th>안타</th> <!-- H -->
-                        <th>2타+</th> <!-- 2B + 3B -->
-                        <th>홈런</th> <!-- HR -->
-                        <th>득점</th> <!-- R -->
-                        <th>타점</th> <!-- RBI -->
-                        <th>도루</th> <!-- SB -->
-                        <th>4구</th> <!-- BB -->
-                        <th>삼진</th> <!-- SO -->
-                        <th>병살</th> <!-- GDP -->
-                    </tr>
-                </thead>
-                <tbody id="rosterHitterAdvancedBody">
-                    <!-- 로스터 라인 예시
-                    <tr>
-                        <th scope="row">C</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>0.300</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
-                        <td>10</td>
-                        <td>11</td>
-                        <td>12</td>
-                    </tr>
-                    -->
-                </tbody>
-            </table>
-
-            <table id="rosterPitcherDefault" class="table table-hover text-center table-responsive-md table-roster" hidden>
-                <thead>
-                    <tr>
-                        <th style="width:  5%">&#8194;</th>
-                        <th style="width: 15%">선수명</th>
-                        <th>포인트</th>
-                        <th>금주</th>
-                        <th>금월</th>
-                        <th>출장률</th>
-                    </tr>
-                </thead>
-                <tbody id="rosterPitcherDefaultBody">
-                    <!-- 로스터 라인 예시
-                    <tr>
-                        <th scope="row">P</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>25</td>
-                        <td><span style="color:red;">&#9650; 21</span></td>
-                        <td><span style="color:red;">&#9650; 37</span></td>
-                        <td>95%</td>
-                    </tr>
-                    -->
-                </tbody>
-            </table>
-
-            <table id="rosterPitcherAdvanced" class="table table-hover text-center table-responsive-md table-roster" hidden>
-                <thead>
-                    <tr>
-                        <th style="width:  5%">&#8194;</th>
-                        <th style="width: 15%">선수명</th>
-                        <th>ERA</th>
-                        <th>WHIP</th>
-                        <th>경기</th>
-                        <th>이닝</th> <!-- IP -->
-                        <th>승</th>
-                        <th>패</th>
-                        <th>홀드</th>
-                        <th>SV</th> <!-- 세이브 -->
-                        <th>QS</th> <!-- IP >= 6 & ER <= 3 -->
-                        <th>K/BB</th>
-                        <th>안타</th> <!-- H -->
-                        <th>홈런</th> <!-- HR -->
-                        <th>4구</th> <!-- BB -->
-                        <th>삼진</th> <!-- SO -->
-                    </tr>
-                </thead>
-                <tbody id="rosterPitcherAdvancedBody">
-                    <!-- 로스터 라인 예시
-                    <tr>
-                        <th scope="row">P</th>
-                        <td>ㅇㅇㅇ</td>
-                        <td>1.23</td>
-                        <td>4.56</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
-                        <td>7.89</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                    </tr>
-                    -->
-                </tbody>
-            </table>
+            <div id="rosterPitcherFrame" class="row justify-content-center" hidden>
+                <div class="col" style="padding: 0;">
+                    <table id="rosterPitcherHead" class="table table-hover text-center table-roster-head">
+                        <thead>
+                            <tr>
+                                <th>&#8194;</th>
+                                <th>선수명</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rosterPitcherHeadBody">
+                            <!-- 로스터 라인 예시
+                            <tr>
+                                <th scope="row">P</th>
+                                <td>ㅇㅇㅇ</td>
+                            </tr>
+                            -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col" style="padding: 0;">
+                    <table id="rosterPitcherMain" class="table table-hover text-center table-responsive-md table-roster-main">
+                        <thead>
+                            <tr>
+                                <th>포인트</th>
+                                <th>금주</th>
+                                <th>ERA</th>
+                                <th>WHIP</th>
+                                <th>경기</th>
+                                <th>이닝</th> <!-- IP -->
+                                <th>승</th>
+                                <th>패</th>
+                                <th>홀드</th>
+                                <th>SV</th> <!-- 세이브 -->
+                                <th>QS</th> <!-- IP >= 6 & ER <= 3 -->
+                                <th>K/BB</th>
+                                <th>안타</th> <!-- H -->
+                                <th>홈런</th> <!-- HR -->
+                                <th>4구</th> <!-- BB -->
+                                <th>삼진</th> <!-- SO -->
+                            </tr>
+                        </thead>
+                        <tbody id="rosterPitcherMainBody">
+                            <!-- 로스터 라인 예시
+                            <tr>
+                                <td scope="row">250</td>
+                                <td><span style="color:red;">&#9650; 21</span></td>
+                                <td>1.23</td>
+                                <td>4.56</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>7.89</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                            </tr>
+                            -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
             <div class="row justify-content-center">
                 <div class="col-md">

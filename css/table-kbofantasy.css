@@ -12,10 +12,16 @@
     background-color: white;
 }
 
-.table-roster > thead:first-child > tr:first-child > th:first-child {
-    position: sticky;
-    left: 0em;
-    background-color: white;
+.table-roster-head > thead:first-child > tr:first-child > th:nth-child(2) {
+    white-space: nowrap;
+}
+
+.table-roster-head > tbody > tr > td:nth-child(2) {
+    white-space: nowrap;
+}
+
+.table-roster-main > thead:first-child {
+    white-space: nowrap;
 }
 
 .table-roster > tbody > tr > th:first-child {

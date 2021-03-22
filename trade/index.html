@@ -88,7 +88,7 @@
                     <button type="button" id="team요" onclick="updateTeamSelection('요')" class="btn btn-outline-primary btn-block">요</button>
                 </div>
                 <div class="form-group col">
-                    <button type="button" id="teamFA" onclick="updateTeamSelection('FA')" class="btn btn-outline-primary btn-block">FA</button>
+                    <button type="button" id="teamFA" onclick="updateTeamSelection('FA')" class="btn btn-primary btn-block">FA</button>
                 </div>
             </div>
 
@@ -97,185 +97,157 @@
                     <button type="button" id="position1" onclick="updatePosition(1)" class="btn btn-outline-primary btn-block">타자</button>
                 </div>
                 <div class="form-group col">
-                    <button type="button" id="position2" onclick="updatePosition(2)" class="btn btn-outline-primary btn-block">투수</button>
+                    <button type="button" id="position2" onclick="updatePosition(2)" class="btn btn-primary btn-block">투수</button>
                 </div>
             </div>
 
             <div id="hitterPositionSelectionBar" class="form-row" hidden>
                 <div class="form-group col">
-                    <button type="button" id="hitterPositionC" onclick="updateHitterPositionSelection('C')" class="btn btn-outline-primary btn-block">C</button>
-                </div>
-                <div class="form-group col">
-                    <button type="button" id="hitterPosition1B" onclick="updateHitterPositionSelection('1B')" class="btn btn-outline-primary btn-block">1B</button>
-                </div>
-                <div class="form-group col">
-                    <button type="button" id="hitterPosition2B" onclick="updateHitterPositionSelection('2B')" class="btn btn-outline-primary btn-block">2B</button>
-                </div>
-                <div class="form-group col">
-                    <button type="button" id="hitterPosition3B" onclick="updateHitterPositionSelection('3B')" class="btn btn-outline-primary btn-block">3B</button>
-                </div>
-                <div class="form-group col">
-                    <button type="button" id="hitterPositionLF" onclick="updateHitterPositionSelection('LF')" class="btn btn-outline-primary btn-block">LF</button>
-                </div>
-                <div class="form-group col">
-                    <button type="button" id="hitterPositionCF" onclick="updateHitterPositionSelection('CF')" class="btn btn-outline-primary btn-block">CF</button>
-                </div>
-                <div class="form-group col">
-                    <button type="button" id="hitterPositionRF" onclick="updateHitterPositionSelection('RF')" class="btn btn-outline-primary btn-block">RF</button>
-                </div>
-                <div class="form-group col">
-                    <button type="button" id="hitterPositionDH" onclick="updateHitterPositionSelection('DH')" class="btn btn-outline-primary btn-block">DH</button>
-                </div>
-                <div class="form-group col">
-                    <button type="button" id="hitterPositionAll" onclick="updateHitterPositionSelection('All')" class="btn btn-outline-dark btn-block">전부선택</button>
+                    <a id="hitterPositionButton" data-toggle="modal" href="#hitterPositionDialog" class="btn btn-outline-dark btn-block">포지션: 전부</a>
                 </div>
             </div>
 
-            <table id="rosterHitterDefault" class="table table-hover text-center table-responsive-md table-trade" hidden>
-                <thead>
-                    <tr>
-                        <th style="width: 15%">선수명</th>
-                        <th style="width:  5%">&#8194;</th> <!-- 포지션 -->
-                        <th>소속</th>
-                        <th>포인트</th>
-                        <th>금주</th>
-                        <th>금월</th>
-                        <th>출장률</th>
-                    </tr>
-                </thead>
-                <tbody id="rosterHitterDefaultBody">
-                    <!-- 트레이드 로스터 라인 예시
-                    <tr>
-                        <th scope="row">ㅇㅇㅇ</th>
-                        <td>C</td>
-                        <td>깡</td>
-                        <td>25</td>
-                        <td><span style="color:red;">&#9650; 21</span></td>
-                        <td><span style="color:red;">&#9650; 37</span></td>
-                        <td>95%</td>
-                    </tr>
-                    -->
-                </tbody>
-            </table>
+            <div class="row justify-content-center">
+                <div class="col-md">
+                    <br>
+                </div>
+            </div>
 
-            <table id="rosterHitterAdvanced" class="table table-hover text-center table-responsive-md table-trade" hidden>
-                <thead>
-                    <tr>
-                        <th style="width: 15%">선수명</th>
-                        <th style="width:  5%">&#8194;</th> <!-- 포지션 -->
-                        <th>소속</th>
-                        <th>AVG</th>
-                        <th>경기</th>
-                        <th>타석</th> <!-- PA -->
-                        <th>타수</th> <!-- AB -->
-                        <th>안타</th> <!-- H -->
-                        <th>2타+</th> <!-- 2B + 3B -->
-                        <th>홈런</th> <!-- HR -->
-                        <th>득점</th> <!-- R -->
-                        <th>타점</th> <!-- RBI -->
-                        <th>도루</th> <!-- SB -->
-                        <th>4구</th> <!-- BB -->
-                        <th>삼진</th> <!-- SO -->
-                        <th>병살</th> <!-- GDP -->
-                    </tr>
-                </thead>
-                <tbody id="rosterHitterAdvancedBody">
-                    <!-- 트레이드 로스터 라인 예시
-                    <tr>
-                        <th scope="row">ㅇㅇㅇ</th>
-                        <td>C</td>
-                        <td>깡</td>
-                        <td>0.300</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
-                        <td>10</td>
-                        <td>11</td>
-                        <td>12</td>
-                    </tr>
-                    -->
-                </tbody>
-            </table>
+            <div id="rosterHitterFrame" class="row justify-content-center" hidden>
+                <div class="col" style="padding: 0;">
+                    <table id="rosterHitterHead" class="table table-hover text-center table-roster-head">
+                        <thead>
+                            <tr>
+                                <th>선수명</th>
+                                <th>&#8194;</th>
+                                <th>소속</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rosterHitterHeadBody">
+                            <!-- 로스터 라인 예시
+                            <tr>
+                                <th scope="row">ㅇㅇㅇ</th>
+                                <td>C</td>
+                                <td>FA</td>
+                            </tr>
+                            -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col" style="padding: 0;">
+                    <table id="rosterHitterMain" class="table table-hover text-center table-responsive-md table-roster-main">
+                        <thead>
+                            <tr>
+                                <th onclick='updateSortingVariable(0)'>포인트</th>
+                                <th onclick='updateSortingVariable(1)'>금주</th>
+                                <th onclick='updateSortingVariable(2)'>AVG</th>
+                                <th onclick='updateSortingVariable(3)'>경기</th>
+                                <th onclick='updateSortingVariable(4)'>타석</th> <!-- PA -->
+                                <th onclick='updateSortingVariable(5)'>타수</th> <!-- AB -->
+                                <th onclick='updateSortingVariable(6)'>안타</th> <!-- H -->
+                                <th onclick='updateSortingVariable(7)'>2타+</th> <!-- 2B + 3B -->
+                                <th onclick='updateSortingVariable(8)'>홈런</th> <!-- HR -->
+                                <th onclick='updateSortingVariable(9)'>득점</th> <!-- R -->
+                                <th onclick='updateSortingVariable(10)'>타점</th> <!-- RBI -->
+                                <th onclick='updateSortingVariable(11)'>도루</th> <!-- SB -->
+                                <th onclick='updateSortingVariable(12)'>4구</th> <!-- BB -->
+                                <th onclick='updateSortingVariable(13)'>삼진</th> <!-- SO -->
+                                <th onclick='updateSortingVariable(14)'>병살</th> <!-- GDP -->
+                            </tr>
+                        </thead>
+                        <tbody id="rosterHitterMainBody">
+                            <!-- 로스터 라인 예시
+                            <tr>
+                                <td scope="row">250</td>
+                                <td><span style="color:red;">&#9650; 21</span></td>
+                                <td>0.300</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>10</td>
+                                <td>11</td>
+                                <td>12</td>
+                            </tr>
+                            -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-            <table id="rosterPitcherDefault" class="table table-hover text-center table-responsive-md table-trade" hidden>
-                <thead>
-                    <tr>
-                        <th style="width: 15%">선수명</th>
-                        <th style="width:  5%">&#8194;</th> <!-- 포지션 -->
-                        <th>소속</th>
-                        <th>포인트</th>
-                        <th>금주</th>
-                        <th>금월</th>
-                        <th>출장률</th>
-                    </tr>
-                </thead>
-                <tbody id="rosterPitcherDefaultBody">
-                    <!-- 트레이드 로스터 라인 예시
-                    <tr>
-                        <th scope="row">ㅇㅇㅇ</th>
-                        <td>C</td>
-                        <td>깡</td>
-                        <td>25</td>
-                        <td><span style="color:red;">&#9650; 21</span></td>
-                        <td><span style="color:red;">&#9650; 37</span></td>
-                        <td>95%</td>
-                    </tr>
-                    -->
-                </tbody>
-            </table>
-
-            <table id="rosterPitcherAdvanced" class="table table-hover text-center table-responsive-md table-trade" hidden>
-                <thead>
-                    <tr>
-                        <th style="width: 15%">선수명</th>
-                        <th style="width:  5%">&#8194;</th> <!-- 포지션 -->
-                        <th>소속</th>
-                        <th>ERA</th>
-                        <th>WHIP</th>
-                        <th>경기</th>
-                        <th>이닝</th> <!-- IP -->
-                        <th>승</th>
-                        <th>패</th>
-                        <th>홀드</th>
-                        <th>세이브</th>
-                        <th>QS</th> <!-- IP >= 6 & ER <= 3 -->
-                        <th>K/BB</th>
-                        <th>피안타</th> <!-- H -->
-                        <th>피홈런</th> <!-- HR -->
-                        <th>4구</th> <!-- BB -->
-                        <th>삼진</th> <!-- SO -->
-                    </tr>
-                </thead>
-                <tbody id="rosterPitcherAdvancedBody">
-                    <!-- 트레이드 로스터 라인 예시
-                    <tr>
-                        <th scope="row">ㅇㅇㅇ</th>
-                        <td>P</td>
-                        <td>깡</td>
-                        <td>1.23</td>
-                        <td>4.56</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
-                        <td>7.89</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                    </tr>
-                    -->
-                </tbody>
-            </table>
+            <div id="rosterPitcherFrame" class="row justify-content-center">
+                <div class="col" style="padding: 0;">
+                    <table id="rosterPitcherHead" class="table table-hover text-center table-roster-head">
+                        <thead>
+                            <tr>
+                                <th>선수명</th>
+                                <th>&#8194;</th>
+                                <th>소속</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rosterPitcherHeadBody">
+                            <!-- 로스터 라인 예시
+                            <tr>
+                                <th scope="row">ㅇㅇㅇ</th>
+                                <td>P</td>
+                                <td>FA</td>
+                            </tr>
+                            -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col" style="padding: 0;">
+                    <table id="rosterPitcherMain" class="table table-hover text-center table-responsive-md table-roster-main">
+                        <thead>
+                            <tr>
+                                <th onclick='updateSortingVariable(0)'>포인트</th>
+                                <th onclick='updateSortingVariable(1)'>금주</th>
+                                <th onclick='updateSortingVariable(2)'>ERA</th>
+                                <th onclick='updateSortingVariable(3)'>WHIP</th>
+                                <th onclick='updateSortingVariable(4)'>경기</th>
+                                <th onclick='updateSortingVariable(5)'>이닝</th> <!-- IP -->
+                                <th onclick='updateSortingVariable(6)'>승</th>
+                                <th onclick='updateSortingVariable(7)'>패</th>
+                                <th onclick='updateSortingVariable(8)'>홀드</th>
+                                <th onclick='updateSortingVariable(9)'>SV</th> <!-- 세이브 -->
+                                <th onclick='updateSortingVariable(10)'>QS</th> <!-- IP >= 6 & ER <= 3 -->
+                                <th onclick='updateSortingVariable(11)'>K/BB</th>
+                                <th onclick='updateSortingVariable(12)'>안타</th> <!-- H -->
+                                <th onclick='updateSortingVariable(13)'>홈런</th> <!-- HR -->
+                                <th onclick='updateSortingVariable(14)'>4구</th> <!-- BB -->
+                                <th onclick='updateSortingVariable(15)'>삼진</th> <!-- SO -->
+                            </tr>
+                        </thead>
+                        <tbody id="rosterPitcherMainBody">
+                            <!-- 로스터 라인 예시
+                            <tr>
+                                <td scope="row">250</td>
+                                <td><span style="color:red;">&#9650; 21</span></td>
+                                <td>1.23</td>
+                                <td>4.56</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>7.89</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                            </tr>
+                            -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
             <div class="row justify-content-center">
                 <div class="col-md">
@@ -285,6 +257,56 @@
 
         </div>
 
+    </div>
+
+    <div class="modal fade" id="hitterPositionDialog" role="document">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="history">타자 포지션 선택</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <button type="button" id="hitterPositionC" onclick="updateHitterPositionSelection('C')" class="btn btn-outline-dark btn-block">C</button>
+                        </div>
+                        <div class="form-group col">
+                            <button type="button" id="hitterPosition1B" onclick="updateHitterPositionSelection('1B')" class="btn btn-outline-dark btn-block">1B</button>
+                        </div>
+                        <div class="form-group col">
+                            <button type="button" id="hitterPosition2B" onclick="updateHitterPositionSelection('2B')" class="btn btn-outline-dark btn-block">2B</button>
+                        </div>
+                        <div class="form-group col">
+                            <button type="button" id="hitterPosition3B" onclick="updateHitterPositionSelection('3B')" class="btn btn-outline-dark btn-block">3B</button>
+                        </div>
+                        <div class="form-group col">
+                            <button type="button" id="hitterPositionSS" onclick="updateHitterPositionSelection('SS')" class="btn btn-outline-dark btn-block">SS</button>
+                        </div>
+                        <div class="form-group col">
+                            <button type="button" id="hitterPositionLF" onclick="updateHitterPositionSelection('LF')" class="btn btn-outline-dark btn-block">LF</button>
+                        </div>
+                        <div class="form-group col">
+                            <button type="button" id="hitterPositionCF" onclick="updateHitterPositionSelection('CF')" class="btn btn-outline-dark btn-block">CF</button>
+                        </div>
+                        <div class="form-group col">
+                            <button type="button" id="hitterPositionRF" onclick="updateHitterPositionSelection('RF')" class="btn btn-outline-dark btn-block">RF</button>
+                        </div>
+                        <div class="form-group col">
+                            <button type="button" id="hitterPositionDH" onclick="updateHitterPositionSelection('DH')" class="btn btn-outline-dark btn-block">DH</button>
+                        </div>
+                        <div class="form-group col">
+                            <button type="button" id="hitterPositionAll" onclick="updateHitterPositionSelection('All')" class="btn btn-outline-dark btn-block">전부선택</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Optional JavaScript -->
