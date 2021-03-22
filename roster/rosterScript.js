@@ -223,7 +223,8 @@ function updateRoster(n) {
     var innerHTMLString;
     var innerHTMLStringArray;
     var innerHTMLStringArraySlice;
-    var innerHTMLArray = [];
+    var innerHTMLArrayHitter = [];
+    var innerHTMLArrayPitcher = [];
     rosterHitterTableBody.innerHTML   = '';
     rosterPitcherTableBody.innerHTML   = '';
 
@@ -247,10 +248,10 @@ function updateRoster(n) {
                 innerHTMLStringArraySlice[i] = Number(innerHTMLStringArraySlice[i]).toFixed(hitterBodyDataDecimals[i]);
             }
             // write hitter head and main
-            innerHTMLArray.push('<tr><th scope="row">' + hitterPositionDictionary[key] + '</th><td>' + innerHTMLStringArray[0] + '</td>' + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>');
+            innerHTMLArrayHitter.push('<tr><th scope="row">' + hitterPositionDictionary[key] + '</th><td>' + innerHTMLStringArray[0] + '</td>' + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>');
         }
         // insert table code
-        rosterHitterTableBody.innerHTML = innerHTMLArray.join("");
+        rosterHitterTableBody.innerHTML = innerHTMLArrayHitter.join("");
     }
 
     // update pitcher tables
@@ -273,10 +274,10 @@ function updateRoster(n) {
                 innerHTMLStringArraySlice[i] = Number(innerHTMLStringArraySlice[i]).toFixed(pitcherBodyDataDecimals[i]);
             }
             // write pitcher head and main
-            innerHTMLArray.push('<tr><th scope="row">' + pitcherPositionDictionary[key] + '</th><td>' + innerHTMLStringArray[0] + '</td>' + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>');
+            innerHTMLArrayPitcher.push('<tr><th scope="row">' + pitcherPositionDictionary[key] + '</th><td>' + innerHTMLStringArray[0] + '</td>' + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>');
         }
         // insert table code
-        rosterPitcherTableBody.innerHTML = innerHTMLArray.join("");
+        rosterPitcherTableBody.innerHTML = innerHTMLArrayPitcher.join("");
     }
 }
 
