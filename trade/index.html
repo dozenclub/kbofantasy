@@ -114,30 +114,13 @@
             </div>
 
             <div id="rosterHitterFrame" class="row justify-content-center" hidden>
-                <div class="col" style="padding: 0;">
-                    <table id="rosterHitterHead" class="table table-hover text-center table-roster-head">
+                <div class="col">
+                    <table id="rosterHitterTable" class="table table-hover text-center table-responsive-md table-roster">
                         <thead>
                             <tr>
                                 <th>선수명</th>
                                 <th>&#8194;</th>
                                 <th>소속</th>
-                            </tr>
-                        </thead>
-                        <tbody id="rosterHitterHeadBody">
-                            <!-- 로스터 라인 예시
-                            <tr>
-                                <th scope="row">ㅇㅇㅇ</th>
-                                <td>C</td>
-                                <td>FA</td>
-                            </tr>
-                            -->
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col" style="padding: 0;">
-                    <table id="rosterHitterMain" class="table table-hover text-center table-responsive-md table-roster-main">
-                        <thead>
-                            <tr>
                                 <th onclick='updateSortingVariable(0)'>포인트</th>
                                 <th onclick='updateSortingVariable(1)'>금주</th>
                                 <th onclick='updateSortingVariable(2)'>AVG</th>
@@ -155,10 +138,12 @@
                                 <th onclick='updateSortingVariable(14)'>병살</th> <!-- GDP -->
                             </tr>
                         </thead>
-                        <tbody id="rosterHitterMainBody">
+                        <tbody id="rosterHitterTableBody">
                             <!-- 로스터 라인 예시
                             <tr>
-                                <td scope="row">250</td>
+                                <th scope="row">ㅇㅇㅇ</th>
+                                <td>C</td>
+                                <td>깡</td>
                                 <td><span style="color:red;">&#9650; 21</span></td>
                                 <td>0.300</td>
                                 <td>1</td>
@@ -181,30 +166,13 @@
             </div>
 
             <div id="rosterPitcherFrame" class="row justify-content-center">
-                <div class="col" style="padding: 0;">
-                    <table id="rosterPitcherHead" class="table table-hover text-center table-roster-head">
+                <div class="col">
+                    <table id="rosterPitcherTable" class="table table-hover text-center table-responsive-md table-roster">
                         <thead>
                             <tr>
                                 <th>선수명</th>
                                 <th>&#8194;</th>
                                 <th>소속</th>
-                            </tr>
-                        </thead>
-                        <tbody id="rosterPitcherHeadBody">
-                            <!-- 로스터 라인 예시
-                            <tr>
-                                <th scope="row">ㅇㅇㅇ</th>
-                                <td>P</td>
-                                <td>FA</td>
-                            </tr>
-                            -->
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col" style="padding: 0;">
-                    <table id="rosterPitcherMain" class="table table-hover text-center table-responsive-md table-roster-main">
-                        <thead>
-                            <tr>
                                 <th onclick='updateSortingVariable(0)'>포인트</th>
                                 <th onclick='updateSortingVariable(1)'>금주</th>
                                 <th onclick='updateSortingVariable(2)'>ERA</th>
@@ -223,10 +191,13 @@
                                 <th onclick='updateSortingVariable(15)'>삼진</th> <!-- SO -->
                             </tr>
                         </thead>
-                        <tbody id="rosterPitcherMainBody">
+                        <tbody id="rosterPitcherTableBody">
                             <!-- 로스터 라인 예시
                             <tr>
-                                <td scope="row">250</td>
+                                <th scope="row">ㅇㅇㅇ</th>
+                                <td>P</td>
+                                <td>깡</td>
+                                <td>250</td>
                                 <td><span style="color:red;">&#9650; 21</span></td>
                                 <td>1.23</td>
                                 <td>4.56</td>

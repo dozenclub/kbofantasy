@@ -179,10 +179,8 @@ function writePlayerTable() {
     var innerHTMLString;
     var innerHTMLStringArray;
     var innerHTMLStringArraySlice;
-    rosterHitterHeadBody.innerHTML   = '';
-    rosterHitterMainBody.innerHTML   = '';
-    rosterPitcherHeadBody.innerHTML   = '';
-    rosterPitcherMainBody.innerHTML   = '';
+    rosterHitterTableBody.innerHTML   = '';
+    rosterPitcherTableBody.innerHTML   = '';
 
     if(currentPosition == 1) {
         // update hitter tables
@@ -191,10 +189,8 @@ function writePlayerTable() {
             innerHTMLStringArray = tradeHitterData[currentPlayerIndices[j]];
             // create a line if not null
             if(innerHTMLStringArray != null) {
-                // update hitter head
-                rosterHitterHeadBody.innerHTML = rosterHitterHeadBody.innerHTML + '<tr><th scope="row">' + innerHTMLStringArray[0] + '</th><td>' + innerHTMLStringArray[1] + '</td><td>' + innerHTMLStringArray[2] + '</td>';
-                ///// update hitter main /////
-                innerHTMLString = '<tr><td scope="row">' + innerHTMLStringArray[3] + '</td><td>';
+                ///// prepare hitter main /////
+                innerHTMLString = '<td>' + innerHTMLStringArray[3] + '</td><td>';
                 if(innerHTMLStringArray[4] >= 0) {
                     innerHTMLString = innerHTMLString + '<span style="color:red;">&#9650;' + innerHTMLStringArray[4] + '</span></td><td>';
                 } else {
@@ -206,8 +202,8 @@ function writePlayerTable() {
                 for(i=0; i<innerHTMLStringArraySlice.length; i++) {
                     innerHTMLStringArraySlice[i] = Number(innerHTMLStringArraySlice[i]).toFixed(hitterBodyDataDecimals[i]);
                 }
-                // write line to main body
-                rosterHitterMainBody.innerHTML = rosterHitterMainBody.innerHTML + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>';
+                // write hitter head and main
+                rosterHitterTableBody.innerHTML = rosterHitterTableBody.innerHTML + '<tr><th scope="row">' + innerHTMLStringArray[0] + '</th><td>' + innerHTMLStringArray[1] + '</td><td>' + innerHTMLStringArray[2] + '</td>' + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>';
             }
         }
     }
@@ -218,10 +214,8 @@ function writePlayerTable() {
             innerHTMLStringArray = tradePitcherData[currentPlayerIndices[j]];
             // create a line if not null
             if(innerHTMLStringArray != null) {
-                // update pitcher head
-                rosterPitcherHeadBody.innerHTML = rosterPitcherHeadBody.innerHTML + '<tr><th scope="row">' + innerHTMLStringArray[0] + '</th><td>' + innerHTMLStringArray[1] + '</td><td>' + innerHTMLStringArray[2] + '</td>';
                 ///// update pitcher main /////
-                innerHTMLString = '<tr><td scope="row">' + innerHTMLStringArray[3] + '</td><td>';
+                innerHTMLString = '<td>' + innerHTMLStringArray[3] + '</td><td>';
                 if(innerHTMLStringArray[4] >= 0) {
                     innerHTMLString = innerHTMLString + '<span style="color:red;">&#9650;' + innerHTMLStringArray[4] + '</span></td><td>';
                 } else {
@@ -233,8 +227,8 @@ function writePlayerTable() {
                 for(i=0; i<innerHTMLStringArraySlice.length; i++) {
                     innerHTMLStringArraySlice[i] = Number(innerHTMLStringArraySlice[i]).toFixed(pitcherBodyDataDecimals[i]);
                 }
-                // write line to main body
-                rosterPitcherMainBody.innerHTML = rosterPitcherMainBody.innerHTML + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>';
+                // write pitcher head and main
+                rosterPitcherTableBody.innerHTML = rosterPitcherTableBody.innerHTML + '<tr><th scope="row">' + innerHTMLStringArray[0] + '</th><td>' + innerHTMLStringArray[1] + '</td><td>' + innerHTMLStringArray[2] + '</td>' + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>';
             }
         }
     }

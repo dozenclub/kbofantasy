@@ -99,28 +99,12 @@
             </div>
 
             <div id="rosterHitterFrame" class="row justify-content-center" hidden>
-                <div class="col" style="padding: 0;">
-                    <table id="rosterHitterHead" class="table table-hover text-center table-roster-head">
+                <div class="col">
+                    <table id="rosterHitterTable" class="table table-hover text-center table-responsive-md table-roster">
                         <thead>
                             <tr>
                                 <th>&#8194;</th>
                                 <th>선수명</th>
-                            </tr>
-                        </thead>
-                        <tbody id="rosterHitterHeadBody">
-                            <!-- 로스터 라인 예시
-                            <tr>
-                                <th scope="row">C</th>
-                                <td>ㅇㅇㅇ</td>
-                            </tr>
-                            -->
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col" style="padding: 0;">
-                    <table id="rosterHitterMain" class="table table-hover text-center table-responsive-md table-roster-main">
-                        <thead>
-                            <tr>
                                 <th>포인트</th>
                                 <th>금주</th>
                                 <th>AVG</th>
@@ -138,9 +122,11 @@
                                 <th>병살</th> <!-- GDP -->
                             </tr>
                         </thead>
-                        <tbody id="rosterHitterMainBody">
+                        <tbody id="rosterHitterTableBody">
                             <!-- 로스터 라인 예시
                             <tr>
+                                <th scope="row">C</th>
+                                <td>ㅇㅇㅇ</td>
                                 <td scope="row">250</td>
                                 <td><span style="color:red;">&#9650; 21</span></td>
                                 <td>0.300</td>
@@ -164,28 +150,12 @@
             </div>
 
             <div id="rosterPitcherFrame" class="row justify-content-center" hidden>
-                <div class="col" style="padding: 0;">
-                    <table id="rosterPitcherHead" class="table table-hover text-center table-roster-head">
+                <div class="col">
+                    <table id="rosterPitcherTable" class="table table-hover text-center table-responsive-md table-roster">
                         <thead>
                             <tr>
                                 <th>&#8194;</th>
                                 <th>선수명</th>
-                            </tr>
-                        </thead>
-                        <tbody id="rosterPitcherHeadBody">
-                            <!-- 로스터 라인 예시
-                            <tr>
-                                <th scope="row">P</th>
-                                <td>ㅇㅇㅇ</td>
-                            </tr>
-                            -->
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col" style="padding: 0;">
-                    <table id="rosterPitcherMain" class="table table-hover text-center table-responsive-md table-roster-main">
-                        <thead>
-                            <tr>
                                 <th>포인트</th>
                                 <th>금주</th>
                                 <th>ERA</th>
@@ -204,9 +174,11 @@
                                 <th>삼진</th> <!-- SO -->
                             </tr>
                         </thead>
-                        <tbody id="rosterPitcherMainBody">
+                        <tbody id="rosterPitcherTableBody">
                             <!-- 로스터 라인 예시
                             <tr>
+                                <th scope="row">P</th>
+                                <td>ㅇㅇㅇ</td>
                                 <td scope="row">250</td>
                                 <td><span style="color:red;">&#9650; 21</span></td>
                                 <td>1.23</td>

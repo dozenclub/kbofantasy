@@ -224,10 +224,8 @@ function updateRoster(n) {
     var innerHTMLString;
     var innerHTMLStringArray;
     var innerHTMLStringArraySlice;
-    rosterHitterHeadBody.innerHTML   = '';
-    rosterHitterMainBody.innerHTML   = '';
-    rosterPitcherHeadBody.innerHTML   = '';
-    rosterPitcherMainBody.innerHTML   = '';
+    rosterHitterTableBody.innerHTML   = '';
+    rosterPitcherTableBody.innerHTML   = '';
 
     // update hitter tables
     for(key in hitterPositionDictionary) {
@@ -235,10 +233,8 @@ function updateRoster(n) {
         innerHTMLStringArray = rosterHitterData[n-1][key];
         // create a line if not null
         if(innerHTMLStringArray != null) {
-            // update hitter head
-            rosterHitterHeadBody.innerHTML = rosterHitterHeadBody.innerHTML + '<tr><th scope="row">' + hitterPositionDictionary[key] + '</th><td>' + innerHTMLStringArray[0] + '</td></tr>';
-            ///// update hitter main /////
-            innerHTMLString = '<tr><td scope="row">' + innerHTMLStringArray[1] + '</td><td>';
+            ///// prepare hitter main /////
+            innerHTMLString = '<td>' + innerHTMLStringArray[1] + '</td><td>';
             if(innerHTMLStringArray[2] >= 0) {
                 innerHTMLString = innerHTMLString + '<span style="color:red;">&#9650;' + innerHTMLStringArray[2] + '</span></td><td>';
             } else {
@@ -250,8 +246,8 @@ function updateRoster(n) {
             for(i=0; i<innerHTMLStringArraySlice.length; i++) {
                 innerHTMLStringArraySlice[i] = Number(innerHTMLStringArraySlice[i]).toFixed(hitterBodyDataDecimals[i]);
             }
-            // write line to main body
-            rosterHitterMainBody.innerHTML = rosterHitterMainBody.innerHTML + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>';
+            // write hitter head and main
+            rosterHitterTableBody.innerHTML = rosterHitterTableBody.innerHTML + '<tr><th scope="row">' + hitterPositionDictionary[key] + '</th><td>' + innerHTMLStringArray[0] + '</td>' + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>';
         }
     }
 
@@ -261,10 +257,8 @@ function updateRoster(n) {
         innerHTMLStringArray = rosterPitcherData[n-1][key];
         // create a line if not null
         if(innerHTMLStringArray != null) {
-            // update pitcher head
-            rosterPitcherHeadBody.innerHTML = rosterPitcherHeadBody.innerHTML + '<tr><th scope="row">' + pitcherPositionDictionary[key] + '</th><td>' + innerHTMLStringArray[0] + '</td></tr>';
-            ///// update hitter main /////
-            innerHTMLString = '<tr><td scope="row">' + innerHTMLStringArray[1] + '</td><td>';
+            ///// prepare hitter main /////
+            innerHTMLString = '<td>' + innerHTMLStringArray[1] + '</td><td>';
             if(innerHTMLStringArray[2] >= 0) {
                 innerHTMLString = innerHTMLString + '<span style="color:red;">&#9650;' + innerHTMLStringArray[2] + '</span></td><td>';
             } else {
@@ -276,8 +270,8 @@ function updateRoster(n) {
             for(i=0; i<innerHTMLStringArraySlice.length; i++) {
                 innerHTMLStringArraySlice[i] = Number(innerHTMLStringArraySlice[i]).toFixed(pitcherBodyDataDecimals[i]);
             }
-            // write line to main body
-            rosterPitcherMainBody.innerHTML = rosterPitcherMainBody.innerHTML + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>';
+            // write pitcher head and main
+            rosterPitcherTableBody.innerHTML = rosterPitcherTableBody.innerHTML + '<tr><th scope="row">' + pitcherPositionDictionary[key] + '</th><td>' + innerHTMLStringArray[0] + '</td>' + innerHTMLString + innerHTMLStringArraySlice.join('</td><td>') + '</td></tr>';
         }
     }
 }
