@@ -207,6 +207,7 @@ var hitterBodyDataDecimals  = [3,0,0,0,0,0,0,0,0,0,0,0,0];
 var pitcherBodyDataDecimals = [2,2,0,0,0,0,0,0,0,2,0,0,0,0];
 
 var currentRoster = 0;
+var currentPosition = 0;
 
 function updateRoster(n) {
 
@@ -281,6 +282,27 @@ function updateRoster(n) {
     }
 }
 
+function updatePosition(n) {
+
+    // highlight and un-highlight buttons
+    if(currentPosition > 0) {
+        $('#position'+currentPosition).removeClass("btn-primary").addClass("btn-outline-primary");
+    }
+    $('#position'+n).removeClass("btn-outline-primary").addClass("btn-primary");
+    currentPosition = n;
+
+    // display relevant table
+    if(currentPosition == 1) {
+        rosterHitterFrame.hidden = false;
+        rosterPitcherFrame.hidden = true;
+    } else {
+        rosterHitterFrame.hidden = true;
+        rosterPitcherFrame.hidden = false;
+    }
+
+}
+
 window.onload = function() {
     updateRoster(1);
+    updatePosition(1);
 }

@@ -89,7 +89,16 @@
                 </div>
             </div>
 
-            <div id="rosterHitterFrame" class="row justify-content-center">
+            <div class="form-row">
+                <div class="form-group col">
+                    <button type="button" id="position1" onclick="updatePosition(1)" class="btn btn-outline-primary btn-block">타자</button>
+                </div>
+                <div class="form-group col">
+                    <button type="button" id="position2" onclick="updatePosition(2)" class="btn btn-outline-primary btn-block">투수</button>
+                </div>
+            </div>
+
+            <div id="rosterHitterFrame" class="row justify-content-center" hidden>
                 <div class="col">
                     <table id="rosterHitterTable" class="table table-hover text-center table-responsive-md table-roster">
                         <thead>
@@ -140,7 +149,7 @@
                 </div>
             </div>
 
-            <div id="rosterPitcherFrame" class="row justify-content-center">
+            <div id="rosterPitcherFrame" class="row justify-content-center" hidden>
                 <div class="col">
                     <table id="rosterPitcherTable" class="table table-hover text-center table-responsive-md table-roster">
                         <thead>
