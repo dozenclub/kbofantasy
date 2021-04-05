@@ -2,7 +2,7 @@
 var leaderboardData = [
     {
         // 기본 표시 정보
-        name: "깡",
+        name: "탑성 라이온즈",
         points: 20,
         win: 5,
         lose: 0,
@@ -15,7 +15,7 @@ var leaderboardData = [
     },
     {
         // 기본 표시 정보
-        name: "달",
+        name: "Team F.G.",
         points: 14,
         win: 4,
         lose: 1,
@@ -28,7 +28,7 @@ var leaderboardData = [
     },
     {
         // 기본 표시 정보
-        name: "놉",
+        name: "부산 사롸이스",
         points: 14,
         win: 4,
         lose: 1,
@@ -41,7 +41,7 @@ var leaderboardData = [
     },
     {
         // 기본 표시 정보
-        name: "비",
+        name: "플로리다맨",
         points: 14,
         win: 4,
         lose: 1,
@@ -54,7 +54,7 @@ var leaderboardData = [
     },
     {
         // 기본 표시 정보
-        name: "쌤",
+        name: "여름성",
         points: 14,
         win: 4,
         lose: 1,
@@ -67,7 +67,7 @@ var leaderboardData = [
     },
     {
         // 기본 표시 정보
-        name: "요",
+        name: "프린세스 커넥트",
         points: 14,
         win: 4,
         lose: 1,

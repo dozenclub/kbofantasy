@@ -144,8 +144,8 @@ function updateMatchDetailHeader(n) {
     
     // update header
     matchDetailHeaderTitle.innerHTML = "제" + Number(n) + "경기";
-    matchDetailHeaderHome.innerHTML = '<h1>' + matchSummaryData[n-1]["home"] + '</h1>';
-    matchDetailHeaderAway.innerHTML = '<h1>' + matchSummaryData[n-1]["away"] + '</h1>';
+    matchDetailHeaderHome.innerHTML = '' + matchSummaryData[n-1]["home"] + '';
+    matchDetailHeaderAway.innerHTML = '' + matchSummaryData[n-1]["away"] + '';
     matchDetailBodyRowHome.innerHTML = '<th scope="row">' + matchSummaryData[n-1]["home"] + '</th>';
     matchDetailBodyRowAway.innerHTML = '<th scope="row">' + matchSummaryData[n-1]["away"] + '</th>';
     
