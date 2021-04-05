@@ -5,6 +5,7 @@
 .table-leaderboard > thead:first-child > tr:first-child > th:first-child {
     position: sticky;
     left: 0em;
+    background-color: white;
 }
 
 .table-leaderboard > tbody > tr > th:first-child {
