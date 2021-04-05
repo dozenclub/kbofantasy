@@ -1,3 +1,17 @@
+.table-leaderboard {
+    white-space: nowrap;
+}
+
+.table-leaderboard > thead:first-child > tr:first-child > th:first-child {
+    position: sticky;
+    left: 0em;
+}
+
+.table-leaderboard > tbody > tr > th:first-child {
+    position: sticky;
+    left: 0em;
+}
+
 .table-roster {
     white-space: nowrap;
 }
