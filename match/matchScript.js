@@ -1,8 +1,8 @@
 // 매치 요약 데이터 샘플
 var matchSummaryData = [
     {
-        home:"깡",
-        away:"달",
+        home:"탑성 라이온즈",
+        away:"Team F.G.",
         // 전일누적
         cumulhome:194,
         cumulaway:128,
@@ -14,8 +14,8 @@ var matchSummaryData = [
         totalaway:117
     },
     {
-        home:"놉",
-        away:"비",
+        home:"부산 사롸이스",
+        away:"플로리다맨",
         cumulhome:193,
         cumulaway:128,
         todayhome:11,
@@ -24,8 +24,8 @@ var matchSummaryData = [
         totalaway:117
     },
     {
-        home:"쌤",
-        away:"요",
+        home:"여름성",
+        away:"프린세스 커넥트",
         cumulhome:192,
         cumulaway:128,
         todayhome:11,
@@ -38,8 +38,8 @@ var matchSummaryData = [
 // 매치 상세 데이터 샘플
 var matchDetailData = [
     {
-        home:"깡",
-        away:"달",
+        home:"탑성 라이온즈",
+        away:"Team F.G.",
         // 월요일 포지션별 포인트
         monhome: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],
         monaway: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],
@@ -63,8 +63,8 @@ var matchDetailData = [
         sunaway: null
     },
     {
-        home:"놉",
-        away:"비",
+        home:"부산 사롸이스",
+        away:"플로리다맨",
         monhome: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],
         monaway: [19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1],
         tuehome: [19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1],
@@ -81,8 +81,8 @@ var matchDetailData = [
         sunaway: null
     },
     {
-        home:"쌤",
-        away:"요",
+        home:"여름성",
+        away:"프린세스 커넥트",
         monhome: null,
         monaway: null,
         tuehome: [19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1],
@@ -116,7 +116,7 @@ var matchDetailDayDictionaryCap = {1:"Mon", 2:"Tue", 3:"Wed", 4:"Thu", 5:"Fri", 
 var matchDetailDayDictionaryLow = {1:"mon", 2:"tue", 3:"wed", 4:"thu", 5:"fri", 6:"sat", 7:"sun"};
 
 function createMatchSummaryLine(n) {
-    var innerHTMLString = '<th scope="row">' + matchSummaryData[n-1]["home"] + '<div>VS</div>' + matchSummaryData[n-1]["away"] + '</th><td>' + matchSummaryData[n-1]["cumulhome"] + '<div>&#8194;</div>' + matchSummaryData[n-1]["cumulaway"] + '</td><td>' + matchSummaryData[n-1]["todayhome"] + '<div>&#8194;</div>' + matchSummaryData[n-1]["todayaway"] + '</td><td>' + matchSummaryData[n-1]["totalhome"] + '<div>&#8194;</div>' + matchSummaryData[n-1]["totalaway"] + '</td>';
+    var innerHTMLString = '<th scope="row"><span style="white-space:nowrap;">' + matchSummaryData[n-1]["home"] + '</span><div>VS</div><span style="white-space:nowrap;">' + matchSummaryData[n-1]["away"] + '</span></th><td>' + matchSummaryData[n-1]["cumulhome"] + '<div>&#8194;</div>' + matchSummaryData[n-1]["cumulaway"] + '</td><td>' + matchSummaryData[n-1]["todayhome"] + '<div>&#8194;</div>' + matchSummaryData[n-1]["todayaway"] + '</td><td>' + matchSummaryData[n-1]["totalhome"] + '<div>&#8194;</div>' + matchSummaryData[n-1]["totalaway"] + '</td>';
     return innerHTMLString;
 }
 

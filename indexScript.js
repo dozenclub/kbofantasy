@@ -1,5 +1,3 @@
-/*
-
 // 리더보드 데이터 샘플
 var leaderboardData = [
     {
@@ -123,9 +121,6 @@ leaderboardAdvanced.addEventListener("click", function() {
     leaderboardDefault.hidden = false;
 })
 
-*/
-
 window.onload = function() {
-    // refreshPage();
-    window.location = "http://54.245.222.63:8000/kbofantasy/";
+    refreshPage();
 }
